@@ -2,13 +2,13 @@
 
 Welcome to the ACM website project! This document will guide you through the project requirements, structure, and how to contribute effectively.
 
----
+
 
 ## What Are We Building?
 
 We are developing a **simple ACM website** with a modern design and seamless user experience.
 
----
+
 
 ## Features to Implement
 
@@ -19,7 +19,7 @@ We are developing a **simple ACM website** with a modern design and seamless use
 5. **Team**: Display team members.
 6. **About Us**: Information about ACM.
 
----
+
 
 ## Theme
 
@@ -33,7 +33,7 @@ The website will have the following design theme:
    - Use **module CSS** to avoid global style conflicts.
    - Ensure the website is fully **responsive**.
 
----
+
 
 ## Technology Stack
 
@@ -47,21 +47,21 @@ We will use the following technologies to build the website:
 5. **React Router DOM**: For managing routes.
 6. **Vanilla CSS**: For additional custom styles.
 
----
+
 
 ## Routes
 
 The website will have the following routes:
 
 | Route          | Description                   |
-|-----------------|-------------------------------|
+|--|-|
 | `/home`        | Landing page                  |
 | `/events`      | Displays event details        |
 | `/testimonials`| Section for testimonials      |
 | `/team`        | Displays team members         |
 | `/about-us`    | Information about ACM         |
 
----
+
 
 ## Project Requirements
 
@@ -71,7 +71,7 @@ The website will have the following routes:
 2. **Responsiveness**:
    - The website must be mobile-friendly and responsive on all devices.
 
----
+
 
 ## File Structure
 
@@ -103,7 +103,7 @@ frontend/
         └── Navbar.jsx            # Navigation bar component
 ```
 
----
+
 
 ## Module CSS Example
 
@@ -155,7 +155,7 @@ export default Navbar;
 }
 ```
 
----
+
 
 ## Getting Started
 
@@ -182,9 +182,9 @@ Ensure you have the following tools installed:
    npm run dev
    ```
 
-   Open `http://localhost:3000/` in your browser to view the website.
+   Open `http://localhost:5173/` in your browser to view the website.
 
----
+
 
 ## Contribution Guidelines
 
@@ -194,6 +194,6 @@ Ensure you have the following tools installed:
 - Commit changes with meaningful commit messages.
 - Test your code for responsiveness before pushing.
 
----
+
 
 If you have any questions or need clarification, feel free to reach out to the team lead. Happy coding!
