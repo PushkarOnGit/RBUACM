@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-// Component Imports
-import Home from './Components/Home';
+import Home from './Pages/Home';
+import Events from './Pages/Events';
+import Team from './Pages/Team';
+import Testimonials from './Pages/Testimonials';
 import Navbar from './Components/Navbar';
-import Team from './Components/Team';
-import Testimonials from './Components/Testimonials';
-import Events from './Components/Events';
+
 
 import '../src/styles/App.css';
 
