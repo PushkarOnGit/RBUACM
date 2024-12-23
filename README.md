@@ -26,8 +26,7 @@ We are developing a **simple ACM website** with a modern design and seamless use
 The website will have the following design theme:
 
 1. **Color Palette**:
-   - Primary: **Whitesmoke**
-   - Accent: **Blue**
+   - Primary: **Metallic Grey**
 
 2. **Styling Considerations**:
    - Use **module CSS** to avoid global style conflicts.
