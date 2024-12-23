@@ -1,0 +1,15 @@
+/* Component-specific styles for Home.jsx */
+.container {
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+  
+  .subtitle {
+    font-size: 1.2rem;
+    color: var(--text-color); /* Consistent theme color */
+  }
+  

@@ -1,0 +1,47 @@
+/* src/styles/index.css */
+
+:root {
+  /* Theme Colors */
+  --bg-color: #F5F5F5;         /* Whisper Gray */
+  --text-color: #333333;       /* Charcoal Gray */
+  --heading-color: #4F4F4F;    /* Dark Slate Gray */
+  --accent-color: #0077FF;     /* Vivid Blue */
+  --button-bg: #4F4F4F;        /* Dark Slate Gray */
+  --button-text: #FFFFFF;      /* White */
+  --button-hover-bg: #3A3A3A; /* Slightly darker */
+}
+
+/* Apply Theme Globally */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-color);
+}
+
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--button-hover-bg);
+}
