@@ -1,322 +1,127 @@
-/* Jacques font 
-@import url('https://fonts.googleapis.com/css2?family=Jacques+Francois&family=Poppins:wght@100;400;600&display=swap'); 
-Itim font
-@import url('https://fonts.googleapis.com/css2?family=Itim&family=Jacques+Francois&family=Poppins:wght@100;400;600&display=swap');
-
-.title{
-    font-family: "Jacques Francois", serif;
-    font-size: 2.5rem;
-    display: flex;
-}
-
-.sub-title {
-    font-family: "Itim", serif;
-    font-size: 1.5rem;
-    font-weight: bold;
-} */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-
-:root {
-
-    --background-color: #112e42;
-
-    --main-color:       #00abf0;
-
-    --htm-color:        #f06529;
-
-    --javascript-color: #fdd634;
-
-    --reactjs-color:    #00d8ff;
-
-    --nodejs-color:     #6caa48;
-
-    --expressjs-color:  #01041d;
-
-    --mongodb-color:    #599636;
-
-    --php-color:        #484c89;
-
-}
-
-body {
-    background: var(--background-color);
-}
-
-.main h1 {
-    margin-top: 50px;
-    margin-bottom: 15px;
-    font-size: 50px;
-    color: white;
+/* Basic container styling */
+.timelineContainer {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
     text-align: center;
-}
-
-.main h1 span {
-    color: var(--main-color);
-}
-
-.timeline {
-    position: relative;
-    max-width: 1200px;
-    margin: 100px auto;
-}
-
-.container {
-    padding: 10px 50px;
-    position: relative;
-    width: 50%;
-    animation: movedown 1s linear forwards;
-    opacity: 0;
-}
-
-@keyframes movedown {
-
-    0% {
-        opacity: 1;
-        transform: translateY(-30px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0px);
-    }
-
-}
-
-.container:nth-child(1) {   animation-delay: 0s ;   }
-    
-.container:nth-child(2) {   animation-delay: 1s ;   }
-
-.container:nth-child(3) {   animation-delay: 2s ;   }
-
-.container:nth-child(4) {   animation-delay: 3s ;   }
-
-.container:nth-child(5) {   animation-delay: 4s ;   }
-
-.container:nth-child(6) {   animation-delay: 5s ;   }
-
-.container:nth-child(7) {   animation-delay: 6s ;   }
-
-
-.text-box {
-    padding: 20px 30px;
-    background: #fff;
-    position: relative;
-    border-radius: 6px;
-    font-size: 15px;
-}
-
-.htmltext {
-    color: var(--htm-color);
-}
-
-.javascripttext {
-    color: var(--javascript-color);
-}
-
-
-.reactjstext {
-    color: var(--reactjs-color);
-}
-
-.nodejstext {
-    color: var(--nodejs-color);
-}
-
-.expressjstext {
-    color: var(--expressjs-color);
-}
-
-.mongodbext {
-    color: var(--mongodb-color);
-}
-
-.phptext {
-    color: var(--php-color);
-
-}
-
-.company {
-    color: var(--main-color);
+  }
+  
+  .title {
+    font-size: 2.5rem;
     font-weight: bold;
-    letter-spacing: .1rem;
-}
-
-.htmlcard {
-    border: 3px solid var(--htm-color);
-}
-
-.javascriptcard {
-    border: 3px solid var(--javascript-color);
-}
-
-.reactjscard {
-    border: 3px solid var(--reactjs-color);
-}
-
-.nodejscard {
-    border: 3px solid var(--nodejs-color);
-}
-
-.expressjscard {
-    border: 3px solid var(--expressjs-color);
-}
-
-.mongodbcard {
-    border: 3px solid var(--mongodb-color);
-}
-
-.phpcard {
-    border: 3px solid var(--php-color);
-}
-
-.left-container {
-    left: 0;
-}
-
-.right-container {
-    left: 50%;
-}
-
-.container img {
+    color: #333;
+    margin-bottom: 40px;
+  }
+  
+  /* Timeline container */
+  .timeline {
+    position: relative;
+    padding-left: 40px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Ensures items are centered */
+  }
+  
+  /* Timeline item */
+  .timelineItem {
+    position: relative;
+    margin-bottom: 50px; /* Increased vertical distance */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  /* Timeline card */
+  .timelineCard {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 700px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .timelineCard:hover {
+    transform: translateY(-10px); /* Lift effect */
+  }
+  
+  .timelineImage {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  
+  .timelineText {
+    text-align: center;
+  }
+  
+  .timelineText h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin: 0;
+    color: #333;
+  }
+  
+  .date {
+    font-size: 0.9rem;
+    color: #777;
+    margin: 5px 0;
+  }
+  
+  .timelineText p {
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  /* Timeline line between cards */
+  .timelineLine {
     position: absolute;
-    width: 45px;
-    border-radius: 50%;
-    right: -20px;
-    top: 32px;
-    z-index: 10;
-}
-
-.right-container img {
-    left: -20px;
-}
-
-.timeline::after {
-    content: '';
-    position: absolute;
-    width: 6px;
-    height: 100%;
-    background: var(--main-color);
     top: 0;
+    bottom: 0;
     left: 50%;
-    margin-left: -3px;
-    z-index: -1;
-    animation: moveline 6s linear forwards;
-}
-
-@keyframes moveline {
-
-    0% {
-        height: 0;
-    }
-
-    100% {
-        height: 100%;
-    }
-}
-
-.text-box small {
-    display: inline-block;
-    margin-bottom: 15px;
-}
-
-.left-container-arrow {
-    height: 0;
-    width: 100px;
-    position: absolute;
-    top: 38px;
-    z-index: -1;
-    right: -15px;
-}
-
-
-.right-container-arrow {
-    height: 0;
-    width: 100px;
-    position: absolute;
-    top: 38px;
-    z-index: -1;
-    left: -15px;
-}
-
-.htmlarrow {
-    border: 5px solid var(--htm-color);
-}
-
-.javascriptarrow {
-    border: 5px solid var(--javascript-color);
-}
-
-.reactjsarrow {
-    border: 5px solid var(--reactjs-color);
-
-}
-
-.nodejsarrow {
-    border: 5px solid var(--nodejs-color);
-}
-
-.expressjsarrow {
-    border: 5px solid var(--expressjs-color);
-}
-
-.mongodbarrow {
-    border: 5px solid var(--mongodb-color);
-
-}
-
-.phparrow {
-    border: 5px solid var(--php-color);
-}
-
-
-/* Responsive Timeline */
-
-@media screen and (max-width: 600px) {
-
+    width: 2px;
+    background: #ddd;
+    z-index: 1;
+    margin-left: 20px;
+    transform: translateX(-50%); /* Center the line */
+  }
+  
+  /* Left-aligned cards */
+  .left {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  
+  .left .timelineCard {
+    align-items: flex-start;
+  }
+  
+  /* Right-aligned cards */
+  .right {
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+  }
+  
+  .right .timelineCard {
+    align-items: flex-end;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
     .timeline {
-        margin: 50px auto;
+      padding-left: 20px;
     }
-
-    .timeline::after {
-        left: 31px;
+  
+    .timelineCard {
+      max-width: 100%;
     }
-
-    .container {
-        width: 100%;
-        padding-left: 80px;
-        padding-right: 25px;
-    }
-
-    .text-box {
-        font-size: 13px;
-    }
-
-    .text-box small {
-        margin-bottom: 10px;
-    }
-
-    .right-container {
-        left: 0;
-    }
-
-    .right-container img,
-    .left-container img {
-        
-        left: 10px;
-    }
-
-    .left-container-arrow,
-    .right-container-arrow {
-        left: -15px;
-    }
-    
-}
+  }
+  
