@@ -34,21 +34,22 @@ const Events = () => {
   return (
     <div className={styles.app}>
       <h1 className={styles.title}>Events</h1>
-      <VerticalTimeline>
+      <VerticalTimeline lineColor="grey">
         {events.map((event) => (
           <VerticalTimelineElement
             key={event.id}
             className={styles.timelineElement}
             contentStyle={{
-              background: "linear-gradient(135deg, #0f0c29, #302b63, #24243e)", /* Dark gradient */
+              background: "transparent", /* Dark gradient */
               color: "#fff",
+              boxShadow: "none", /* Remove shadow directly here */
             }}
             contentArrowStyle={{
-              borderRight: "7px solid #24243e",
+              borderRight: "10px solid cyan",
             }}
             dateClassName={styles.date}
             iconStyle={{
-              background: "linear-gradient(135deg, #08aeea, #2af598)", /* Neon gradient */
+              background: "linear-gradient(135deg, cyan, teal)", /* Neon gradient */
               color: "#000",
             }}
             icon={<FaStar />}
