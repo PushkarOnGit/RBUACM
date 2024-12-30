@@ -1,62 +1,74 @@
-import React from "react";
-import styles from "../styles/events.module.css"; // Importing CSS module
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+import { FaStar } from "react-icons/fa";
+import styles from "../styles/events.module.css";
+
+import event1Image from "../assets/images/event1.jpg";
+import event2Image from "../assets/images/event2.jpg";
 
 const events = [
   {
     id: 1,
     title: "Event 1",
-    description: "Description for Event 1. A detailed overview of the event.",
-    image: "https://via.placeholder.com/300x150",
-    date: "January 1, 2024",
+    description: "Description for Event 1",
+    image: event1Image,
+    date: "1 Jan 2025",
   },
   {
     id: 2,
     title: "Event 2",
-    description: "Description for Event 2. A detailed overview of the event.",
-    image: "https://via.placeholder.com/300x150",
-    date: "February 15, 2024",
-  },
-  {
-    id: 3,
-    title: "Event 3",
-    description: "Description for Event 3. A detailed overview of the event.",
-    image: "https://via.placeholder.com/300x150",
-    date: "March 20, 2024",
+    description: "Description for Event 2",
+    image: event2Image,
+    date: "2 Jan 2025",
   },
 ];
 
-function Events() {
+const Events = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, offset: 200 });
+  }, []);
+
   return (
-    <div className={styles.timelineContainer}>
-      <h1 className={styles.title}>Events Timeline</h1>
-      <div className={styles.timeline}>
-        {events.map((event, index) => (
-          <div key={event.id} className={styles.timelineItem}>
-            <div
-              className={`${styles.timelineCard} ${
-                index % 2 === 0 ? styles.left : styles.right
-              }`}
-            >
+    <div className={styles.app}>
+      <h1 className={styles.title}>Events</h1>
+      <VerticalTimeline>
+        {events.map((event) => (
+          <VerticalTimelineElement
+            key={event.id}
+            className={styles.timelineElement}
+            contentStyle={{
+              background: "linear-gradient(135deg, #0f0c29, #302b63, #24243e)", /* Dark gradient */
+              color: "#fff",
+            }}
+            contentArrowStyle={{
+              borderRight: "7px solid #24243e",
+            }}
+            dateClassName={styles.date}
+            iconStyle={{
+              background: "linear-gradient(135deg, #08aeea, #2af598)", /* Neon gradient */
+              color: "#000",
+            }}
+            icon={<FaStar />}
+            data-aos="fade-up"
+          >
+            <div className={styles.card}>
+              <h3 className={styles.eventTitle}>{event.title}</h3>
               <img
                 src={event.image}
-                alt={event.title}
-                className={styles.timelineImage}
+                alt={`Image for ${event.title}`}
+                className={styles.eventImage}
               />
-              <div className={styles.timelineText}>
-                <h3>{event.title}</h3>
-                <p className={styles.date}>{event.date}</p>
-                <p>{event.description}</p>
-              </div>
+              <p className={styles.eventDate}>{event.date}</p>
+              <p className={styles.eventDescription}>{event.description}</p>
             </div>
-            {/* Grey line between the cards */}
-            {index !== events.length - 1 && (
-              <div className={styles.timelineLine}></div>
-            )}
-          </div>
+          </VerticalTimelineElement>
         ))}
-      </div>
+      </VerticalTimeline>
     </div>
   );
-}
+};
 
 export default Events;

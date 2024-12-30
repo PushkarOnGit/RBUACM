@@ -1,127 +1,144 @@
-/* Basic container styling */
-.timelineContainer {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 20px;
-    font-family: Arial, sans-serif;
-    text-align: center;
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;400;600&display=swap');
+
+/* General App Styling */
+.app {
+  padding: 20px;
+  font-family: "Poppins", sans-serif;
+  background-color: #24243e; /* Dark gradient background */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Title Styling with Gradient */
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, #08aeea, #2af598); /* Neon teal gradient */
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 600;
+  margin: 2rem;
+}
+
+/* Card Styling */
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #383862, #28283e);
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out, background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for a soft look */
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  background: #30354b; /* Muted background color on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  z-index: -1;
+  background: linear-gradient(-45deg, #0e121a, #346e84, #0e121a); /* Subtle gradient border */
+  background-size: 300%;
+  border-radius: 10px;
+  transition: background 0.3s ease-in-out;
+  animation: gradientBorder 2s infinite ease-in-out;
+}
+
+@keyframes gradientBorder {
+  0% {
+    background-position: 0% 50%;
   }
-  
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.eventTitle {
+  font-size: 1.7rem;
+  margin-bottom: 15px;
+  color: #00ffcc;
+  font-weight: 600;
+}
+
+.eventImage {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.eventDate {
+  font-size: 1.1rem;
+  color: #33d8b6; /* Softer neon green */
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.eventDescription {
+  font-size: 1rem;
+  color: #ddd;
+  text-align: center;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+/* Timeline Styling */
+.timelineElement .vertical-timeline-element-content {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.timelineElement .vertical-timeline-element-content:hover {
+  transform: translateY(-5px);
+  opacity: 1;
+}
+
+/* Icon Styling */
+.timelineElement .vertical-timeline-element-icon {
+  background: linear-gradient(135deg, #17294d, #00ffcc);
+  color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 40px;
+    font-size: 2rem;
   }
-  
-  /* Timeline container */
-  .timeline {
-    position: relative;
-    padding-left: 40px;
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Ensures items are centered */
-  }
-  
-  /* Timeline item */
-  .timelineItem {
-    position: relative;
-    margin-bottom: 50px; /* Increased vertical distance */
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    width: 100%;
-  }
-  
-  /* Timeline card */
-  .timelineCard {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 700px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease-in-out;
-  }
-  
-  .timelineCard:hover {
-    transform: translateY(-10px); /* Lift effect */
-  }
-  
-  .timelineImage {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-  }
-  
-  .timelineText {
-    text-align: center;
-  }
-  
-  .timelineText h3 {
+
+  .eventTitle {
     font-size: 1.5rem;
-    font-weight: 600;
-    margin: 0;
-    color: #333;
   }
-  
-  .date {
+
+  .eventDescription {
     font-size: 0.9rem;
-    color: #777;
-    margin: 5px 0;
   }
-  
-  .timelineText p {
-    color: #555;
-    line-height: 1.6;
+
+  .eventImage {
+    max-width: 100%;
   }
-  
-  /* Timeline line between cards */
-  .timelineLine {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 2px;
-    background: #ddd;
-    z-index: 1;
-    margin-left: 20px;
-    transform: translateX(-50%); /* Center the line */
+
+  .card {
+    padding: 15px;
   }
-  
-  /* Left-aligned cards */
-  .left {
-    flex-direction: row;
-    justify-content: flex-start;
-  }
-  
-  .left .timelineCard {
-    align-items: flex-start;
-  }
-  
-  /* Right-aligned cards */
-  .right {
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-  }
-  
-  .right .timelineCard {
-    align-items: flex-end;
-  }
-  
-  /* Responsive design */
-  @media (max-width: 768px) {
-    .timeline {
-      padding-left: 20px;
-    }
-  
-    .timelineCard {
-      max-width: 100%;
-    }
-  }
-  
+}
